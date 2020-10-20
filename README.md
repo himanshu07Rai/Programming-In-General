@@ -55,23 +55,23 @@ For larger value of “n” we ignore the constants, hence total time taken to e
 
 ### Below are different types of time function available:
 
-O(1)
+O(1) : Constant time
 
-O(log n)
+O(log n) : Logarithmic Time. This type of time complexity can be achieved by continuously dividing a number by a constant
 
-O(n)
+O(n) : Linear Time. It can be seen in a single for or while loop
 
-O(n log n)
+O(n log n) : Some divide and conquer algorithm have this complexity
 
-O(n^2)
+O(n^2) : Quadratic (Two nested loops)
 
-O(n^3)
+O(n^3) : Cubic (Three nested loops)
 
-O(2^n)
+O(2^n) : Exponential time
 
-O(3^n)
+O(3^n) :      ""
 
-O(n^n)
+O(n^n) :      ""
 
 ### Below is the increasing order of time consumption:
 
