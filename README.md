@@ -38,6 +38,7 @@ Hence the total time taken to execute is = “2n+3”. For larger value of n, we
               {
                 c[i][j] = a[i][j] + b[i][j]
               }
+             }
           }
           
 The first for loop “for (i = 0; i< n; i++)” will be executed (n+1) time. Hence n+1 units.
