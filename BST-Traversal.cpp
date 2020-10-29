@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define nl "\n"
 using namespace std;
 struct Node
 {
@@ -25,6 +26,50 @@ Node *Insert(Node *rootPtr, char data)
     else
         rootPtr->right = Insert(rootPtr->right, data);
 
+    return rootPtr;
+}
+
+Node *FindMin(Node *root)
+{
+    if (root == NULL || root->left == NULL)
+        return root;
+    return FindMin(root->left);
+}
+
+Node *Delete(Node *rootPtr, char c)
+{
+    if (rootPtr == NULL)
+        return rootPtr;
+    else if (c < rootPtr->data)
+        rootPtr->left = Delete(rootPtr->left, c);
+    else if (c > rootPtr->data)
+        rootPtr->right = Delete(rootPtr->right, c);
+    else
+    {
+        if (rootPtr->left == NULL && rootPtr->right == NULL)
+        {
+            delete rootPtr;
+            rootPtr = NULL;
+        }
+        else if (rootPtr->left == NULL)
+        {
+            Node *temp = rootPtr;
+            rootPtr = rootPtr->right;
+            delete temp;
+        }
+        else if (rootPtr->right == NULL)
+        {
+            Node *temp = rootPtr;
+            rootPtr = rootPtr->left;
+            delete temp;
+        }
+        else
+        {
+            Node *temp = FindMin(rootPtr->right);
+            rootPtr->data = temp->data;
+            rootPtr->right = Delete(rootPtr->right, temp->data);
+        }
+    }
     return rootPtr;
 }
 
@@ -65,10 +110,18 @@ int main()
         cin >> a;
         rootPtr = Insert(rootPtr, a);
     }
-    cout << rootPtr->data << endl;
+    cout << rootPtr->data << nl << "Before deleting:" << nl;
     preorder(rootPtr);
-    cout << "\n";
+    cout << nl;
     inorder(rootPtr);
-    cout << "\n";
+    cout << nl;
+    postorder(rootPtr);
+    a = 'D';
+    rootPtr = Delete(rootPtr, a);
+    cout << nl << "After deleting" << nl;
+    preorder(rootPtr);
+    cout << nl;
+    inorder(rootPtr);
+    cout << nl;
     postorder(rootPtr);
 }
