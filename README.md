@@ -105,7 +105,7 @@ The idea is to make each cell ( after collision ) of hash table point to a linke
 
 In open addressing, all elements are stored in the hash table itself. Each table entry contains either a record or NIL. When searching for an element, we one by one examine table slots until the desired element is found or it is clear that the element is not in the table.
 
-##### Linear Probing : 
+##### 1.Linear Probing : 
 
 In linear probing, we linearly probe for next slot. 
 
@@ -118,7 +118,7 @@ In linear probing, we linearly probe for next slot.
     ...............................................................................
 
 
-#### Quadratic Probing : 
+#### 2.Quadratic Probing : 
 
 We look for i2‘th slot in i’th iteration. 
 
@@ -130,7 +130,7 @@ We look for i2‘th slot in i’th iteration.
     ...............................................................................
     ...............................................................................
 
-#### Double Hashing : 
+#### 3.Double Hashing : 
 
 We use another hash function hash2(x) and look for i*hash2(x) slot in i’th rotation. 
 
