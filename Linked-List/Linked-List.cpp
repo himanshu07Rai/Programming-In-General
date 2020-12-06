@@ -45,7 +45,7 @@ int main()
     /*GLOBAL
     head = NULL; //empty list
     */
-    Node *head = NULL;
+    Node *head = NULL; // Pointer in stack , that will point to linked list in heap; NULL shows there are no nodes rn;
     int x, n = 10, i;
     for (i = 0; i < n; i++)
     {
@@ -54,7 +54,7 @@ int main()
 
         /*
         GLOBAL
-        insert( x);
+        insert(x);
         Print();
         */
 
