@@ -77,6 +77,15 @@ O(n^n) :      ""
 
 O(1) < O( log n) < O(n)< O( nlog n) < O(n^2) < O(n^3) < O(2^n) < O(3^n) < O(n^n)
 
+### Comparator
+
+        static bool comp(const vector<int>& vec1, const vector<int>& vec2){
+            if(vec1[0] != vec2[0])
+                return vec1[0] < vec2[0];
+            else
+                return vec1[1]<vec2[1];
+        } 
+
 
 ## Hashing : 
 
