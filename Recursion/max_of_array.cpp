@@ -2,8 +2,8 @@
 using namespace std;
 
 int max(int arr[], int idx, int n){
-    if(idx==n)
-        return 0;
+    if(idx==n-1)
+        return arr[idx];
     int m = max(arr,idx+1,n);
     int r = max(m,arr[idx]);
     return r;
