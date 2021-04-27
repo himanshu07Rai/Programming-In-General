@@ -1,0 +1,52 @@
+article : https://medium.com/swlh/how-to-merge-intervals-step-by-step-cb2c1edf1cd0
+
+Given a list of intervals, merge all the overlapping intervals to produce a list that has only mutually exclusive intervals.
+Intervals: [[1,4], [2,5], [7,9]]
+Output: [[1,5], [7,9]]
+
+
+bool comp(const vector<int>& vec1, const vector<int>& vec2){
+        if(vec1[0] != vec2[0])
+            return vec1[0] < vec2[0];
+        else
+            return vec1[1]<vec2[1];
+    } 
+    
+    
+int solve(vector<vector<int>>& intervals) {
+    int n = intervals.size();
+    int sum = 0;
+    if(!n)
+        return sum;
+    vector<vector<int>> temp;
+    if(n==1)
+        temp.push_back(intervals[0]);
+    else{
+        sort(intervals.begin(),intervals.end(),comp);
+        int startTime = intervals[0][0];
+        int endTime = intervals[0][1];
+        for(int i=1;i<n;i++)
+        {
+            int currStart = intervals[i][0];
+            int currEnd = intervals[i][1];
+            if(currStart<=endTime)
+            {
+                endTime = max(endTime,currEnd);
+            }
+            else
+            {
+                temp.push_back({startTime,endTime});
+                startTime = currStart;
+                endTime = currEnd;
+            }
+        }
+        temp.push_back({startTime,endTime});
+    }
+    
+    for(int i=0;i<temp.size();i++)
+    {
+        sum+=temp[i][1]-temp[i][0]+1;
+        // cout<<temp[i][0]<<" "<<temp[i][1]<<"\n";
+    }
+    return sum;
+}
