@@ -1,0 +1,29 @@
+You are given a string s containing digits from "0" to "9" and lowercase alphabet characters. Return the sum of the numbers found in s.
+
+Input
+s = "11aa32bbb5"
+Output
+48
+Explanation
+Since 11 + 32 + 5 = 48.
+
+int solve(string s) {
+    int ans=0;
+    int add=0;
+    for(int i=0;i<s.length();i++)
+    {
+        int temp = s[i]-'0';
+        if(temp>=0 && temp<=9)
+        {
+            add=add*10+temp;            
+        }
+        else if(add!=0)
+        {
+            ans+=add;
+            add=0;
+        }
+    }
+    // if(add)
+    ans+=add;
+    return ans;
+}
