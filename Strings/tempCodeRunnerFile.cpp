@@ -83,7 +83,7 @@ bool isRotatedPalindrome(string str)
 
 int main()
 {
-    string str = "ZAABCBAAZ";
+    string str = "AABCBAAA";
     int n = str.size();
     if(isPalindrome(str,0,n-1))
         cout << "The string is a rotated palindrome";
