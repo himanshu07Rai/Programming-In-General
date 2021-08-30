@@ -1,1 +1,7 @@
 .vscode
+
+*.com
+*.class
+*.dll
+*.exe
+*.o

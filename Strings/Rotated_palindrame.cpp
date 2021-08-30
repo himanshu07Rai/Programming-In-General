@@ -23,7 +23,7 @@ bool isPalindrome(string str,int l,int r)
 bool isRotatedPalindrome(string str)
 {
     int n = str.length();
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         rotate(str.begin(), str.begin() + 1, str.end());
 
@@ -38,7 +38,7 @@ bool isRotatedPalindrome(string str)
 
 int main()
 {
-    string str = "AABCBAA";
+    string str = "ABCBAAA";
     int n = str.size();
     if(isPalindrome(str,0,n-1))
         cout << "The string is a rotated palindrome";
