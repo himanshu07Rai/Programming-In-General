@@ -1,3 +1,5 @@
+[here](https://dzone.com/articles/the-practical-difference-between-abstract-class-an)
+
 # Abstract Classes
 
 Abstract classes are more indicated for refining what an object is. For instance, we can have an abstract class Animal and now say that Cow is a subclass of Animal. One important limitation is that classes can only inherit from a single abstract class at most.
