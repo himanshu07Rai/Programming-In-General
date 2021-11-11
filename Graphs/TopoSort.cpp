@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void topologicalSortHelp(vector<vector<int>> &graph,vector<bool> &visited,stack<int>&st,int i)
+void dfs(vector<vector<int>> &graph,vector<bool> &visited,stack<int>&st,int i)
 {
     visited[i] = true;
     int n = graph[i].size();
     for(int j=0;j<n;j++)
     {
         if(!visited[graph[i][j]])
-            topologicalSortHelp(graph,visited,st,graph[i][j]);
+            dfs(graph,visited,st,graph[i][j]);
     }
     st.push(i);
 }
@@ -21,7 +21,7 @@ void topologicalSort(vector<vector<int>> &graph)
     for(int i=0;i<V;i++)
     {
         if(!visited[i])
-            topologicalSortHelp(graph,visited,st,i);
+            dfs(graph,visited,st,i);
     }
     while(!st.empty())
     {
