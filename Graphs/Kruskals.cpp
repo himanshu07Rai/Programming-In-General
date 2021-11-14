@@ -11,17 +11,17 @@ int findParent(int node, vector<int> &parent)
     return findParent(parent[node], parent);
 }
 
-void unionByWeights(int u, int v, vector<int> &parent)
+void unionByWeights(int s, int d, vector<int> &parent)
 {
-    if (parent[u] < parent[v])
+    if (parent[s] < parent[d])
     {
-        parent[u] += parent[v];
-        parent[v] = u;
+        parent[s] += parent[d];
+        parent[d] = s;
     }
     else
     {
-        parent[v] += parent[u];
-        parent[u] = v;
+        parent[d] += parent[s];
+        parent[s] = d;
     }
 }
 
@@ -56,7 +56,7 @@ int main()
     for (int i = 0; i < E; i++)
     {
         cin >> s >> d >> w;
-        g.push_back({w, {s, d}});
+        g.push_back(make_pair(w,make_pair(s,d)));
     }
 
     res = kruskals(g, V);
