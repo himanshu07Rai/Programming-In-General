@@ -12,7 +12,7 @@ bool cycleCheck(int node, vector<bool> &visited, vector<vector<int>> &graph)
         int p = q.front().second;
         q.pop();
         cout << n << " ";
-        for (int i = 1; i <= graph.size(); i++)
+        for (int i = 0; i < graph.size(); i++)
         {
             if (graph[n][i])
             {
@@ -37,7 +37,8 @@ bool cycleCheck(int node, vector<bool> &visited, vector<vector<int>> &graph)
 int main()
 {
     int V = 6, E = 6;
-    vector<vector<int>> g(V + 1, vector<int>(V + 1, 0));
+    cin >> V >> E;
+    vector<vector<int>> g(V + 1, vector<int>(V, 0));
     for (int i = 1; i <= E; i++)
     {
         int u, v;
@@ -46,9 +47,9 @@ int main()
         g[v][u] = 1;
     }
 
-    vector<bool> visited(V + 1, false);
+    vector<bool> visited(V, false);
 
-    for (int i = 1; i <= V; i++)
+    for (int i = 1; i < V; i++)
     {
         if (!visited[i])
         {
