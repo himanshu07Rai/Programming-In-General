@@ -12,20 +12,18 @@ bool comp(vector<int> &a, vector<int> &b)
 
 void print_Max_Activities(vector<vector<int>> &arr, int n)
 {
+    int count = 1;
+    int prev = 0;
 
-    cout << "Following activities are selected \n";
-
-    int i = 0;
-    cout << "(" << arr[i][0] << ", " << arr[i][1] << ")\n";
-
-    for (int j = 1; j < n; j++)
+    for (int curr = 1; curr < n; curr++)
     {
-        if (arr[j][0] >= arr[i][1])
+        if (arr[curr][0] >= arr[prev][1])
         {
-            cout << "(" << arr[j][0] << ", " << arr[j][1] << ") \n";
-            i = j;
+            count++;
+            prev = curr;
         }
     }
+    cout << count;
 }
 
 int main()
@@ -33,6 +31,7 @@ int main()
     int n, a, b;
     cin >> n;
     vector<vector<int>> meeting(n);
+
     for (int i = 0; i < n; i++)
     {
         cin >> a >> b;
