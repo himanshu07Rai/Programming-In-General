@@ -1,4 +1,35 @@
 # Programming-In-General
+
+## Constructor Overloading
+We can use this keyword inside the constructor, which can be used to invoke the other constructor of the same class.
+
+```java
+public class Student {  
+  //instance variables of the class  
+  int id,passoutYear;  
+  String name,contactNo,collegeName;  
+
+  Student(String contactNo, String collegeName, int passoutYear){  
+    this.contactNo = contactNo;  
+    this.collegeName = collegeName;  
+    this.passoutYear = passoutYear;  
+  }  
+
+  Student(int id, String name){  
+    this("9899234455", "IIT Kanpur", 2018);  
+    this.id = id;  
+    this.name = name;  
+  }  
+  
+  public static void main(String[] args) {  
+    //object creation  
+    Student s = new Student(101, "John");  
+    System.out.println("Printing Student Information: \n");  
+    System.out.println("Name: "+s.name+"\nId: "+s.id+"\nContact No.: "+s.contactNo+"\nCollege Name: "+s.contactNo+"\nPassing Year: "+s.passoutYear);  
+  }  
+}  
+```
+
 ## Time Complexity : Performance analysis of an algorithm
 1.Let us take the same previous example to calculate the sum of “n” numbers in the array and how much time will it take to get the result.
 
@@ -12,6 +43,15 @@
                   total_sum =  total_sum + arr[i];
                 }
               }
+
+
+    Printing Student Information: 
+
+    Name: John
+    Id: 101
+    Contact No.: 9899234455
+    College Name: 9899234455
+    Passing Year: 2018
 
 
 For space complexity we take the variables, but for calculating time complexity we concentrate of the number of statements executed.
