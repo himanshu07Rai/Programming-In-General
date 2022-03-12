@@ -30,6 +30,14 @@ public class Student {
 }  
 ```
 
+    Printing Student Information: 
+
+    Name: John
+    Id: 101
+    Contact No.: 9899234455
+    College Name: 9899234455
+    Passing Year: 2018
+
 ## Time Complexity : Performance analysis of an algorithm
 1.Let us take the same previous example to calculate the sum of “n” numbers in the array and how much time will it take to get the result.
 
