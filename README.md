@@ -37,6 +37,13 @@ public class Student {
     Contact No.: 9899234455
     College Name: 9899234455
     Passing Year: 2018
+    
+ 
+## Method Overriding
+
+Co-Varient return types are allowed.
+
+    Either the return type is same or it is child of parent return type;
 
 ## Time Complexity : Performance analysis of an algorithm
 1.Let us take the same previous example to calculate the sum of “n” numbers in the array and how much time will it take to get the result.
@@ -51,15 +58,6 @@ public class Student {
                   total_sum =  total_sum + arr[i];
                 }
               }
-
-
-    Printing Student Information: 
-
-    Name: John
-    Id: 101
-    Contact No.: 9899234455
-    College Name: 9899234455
-    Passing Year: 2018
 
 
 For space complexity we take the variables, but for calculating time complexity we concentrate of the number of statements executed.
