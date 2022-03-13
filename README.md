@@ -44,6 +44,50 @@ public class Student {
 Co-Varient return types are allowed.
 
     Either the return type is same or it is child of parent return type;
+    
+## Uses Classes of Packages in custom Classes
+- Using fully qualified name
+
+```java
+class Main
+{
+  public static void main(String[] args) {
+    pac.Start s = new pac.Start();
+    s.display();
+  }
+}
+```
+      
+- importing single class
+
+
+```java
+import pac.Start;
+
+class Main
+{
+  public static void main(String[] args) {
+    Start s = new Start();
+    s.display();
+  }
+}
+```
+
+- importing all classes of package
+
+```java
+import pac.*;
+
+class Main
+{
+	public static void main(String[] args) {
+		Start s = new Start();
+		s.display();
+	}
+}
+```
+
+
 
 ## Time Complexity : Performance analysis of an algorithm
 1.Let us take the same previous example to calculate the sum of “n” numbers in the array and how much time will it take to get the result.
