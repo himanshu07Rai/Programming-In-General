@@ -45,7 +45,7 @@ Co-Varient return types are allowed.
 
     Either the return type is same or it is child of parent return type;
     
-## Uses Classes of Packages in custom Classes
+## Using Classes of Packages in custom Classes
 - Using fully qualified name
 
 ```java
